@@ -19,6 +19,7 @@ body, html {
   position: absolute;
   width: 100%;
   z-index: 10;
+  background-color: black;
 }
 
 .logo {
@@ -51,8 +52,9 @@ body, html {
   /* Use viewport units accounting for navbar */
   height: calc(100vh - 110px);
   min-height: 500px; /* Fallback for very small screens */
-  
-  background-image: url('https://www.super-care.ae/wp-content/uploads/2018/02/4.jpg');
+  background-image: url('https://images.pexels.com/photos/38302/father-daughter-beach-sea-38302.jpeg');
+  /* background-image: url('https://st.depositphotos.com/1011382/2840/i/450/depositphotos_28400225-stock-photo-healthy-fun-family.jpghttps://media.istockphoto.com/id/156711787/photo/playtime-at-the-beach.jpg?s=170667a&w=0&k=20&c=FTc8p0szPuPvcuOf9XNPnDpK96M9qGxnYeyshry72Mw='); */
+  /* background-image: url('https://st.depositphotos.com/1011382/2840/i/450/depositphotos_28400225-stock-photo-healthy-fun-family.jpg'); */
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -67,17 +69,17 @@ body, html {
 
 @media (max-width: 768px) {
   .hero {
-    /* Use svh (smallest viewport height) for mobile browsers */
-    height: calc(100svh - 110px);
+    /* Use dynamic viewport units for mobile browsers */
+    height: calc(100dvh - 110px);
     padding: 20px;
     background-attachment: scroll;
     background-position: center center;
     
-    /* Force full coverage */
-    background-size: 100% 100%;
-    -webkit-background-size: 100% 100%;
-    -moz-background-size: 100% 100%;
-    -o-background-size: 100% 100%;
+    /* Maintain aspect ratio while covering area */
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
   }
 
   .hero-text {
@@ -85,8 +87,9 @@ body, html {
     width: 100%;
     padding: 20px;
     margin: auto;
+    /* background-color: rgba(0, 0, 0, 0.6); For better readability */
+    border-radius: 8px;
   }
-
 
   .hero h1 {
     font-size: 2rem;
