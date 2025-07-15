@@ -1,103 +1,411 @@
-<section class="hover-trigger-area">
-  <!-- Trigger Label -->
-  <div class="trigger-hover">Fixed Income Security Features</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Finaxa Investments</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <!-- Revealed Content on Hover -->
-  <div class="info-row">
-    <div class="info-box full-image-box">
-      <img src="./img/finaxagroup.jpg" alt="Regular Income Stream" class="feature-image" />
+        body, html {
+            font-family: 'Segoe UI', sans-serif;
+            height: 100%;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Navigation Styles */
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: black;
+            padding: 15px 30px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            height: 110px;
+        }
+
+        .logo img {
+            height: 80px;
+        }
+
+        .desktop-nav .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .meeting-btn {
+            background-color: #c1702e;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .menu-icon {
+            font-size: 30px;
+            display: none;
+            cursor: pointer;
+            color: white;
+            margin-left: auto;
+        }
+
+        .mobile-menu {
+            display: none;
+            background-color: #fff;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 250px;
+            height: 100%;
+            padding: 20px;
+            z-index: 2000;
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .mobile-menu a {
+            display: block;
+            margin: 20px 0;
+            font-size: 18px;
+            color: #000;
+            text-decoration: none;
+        }
+
+        .close-btn {
+            font-size: 30px;
+            text-align: right;
+            margin-bottom: 20px;
+            cursor: pointer;
+            color: black;
+            display: none;
+        }
+
+        /* Hero Section Styles */
+        .hero {
+            height: 100vh;
+            min-height: 600px;
+            background-image: url('https://www.super-care.ae/wp-content/uploads/2018/02/4.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin-top: 110px;
+            padding: 0 20px;
+        }
+
+        .hero-text {
+            text-align: center;
+            width: 100%;
+            max-width: 800px;
+            padding: 30px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .contact-btn {
+            background-color: white;
+            color: #a85d23;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .desktop-nav,
+            .meeting-btn {
+                display: none;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            .close-btn {
+                display: block;
+            }
+
+            .hero {
+                height: calc(100vh - 110px);
+                min-height: unset;
+                padding: 20px;
+                background-attachment: scroll;
+            }
+
+            .hero-text {
+                padding: 20px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-text {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="top-nav">
+        <div class="logo">
+            <img src="img/logo.png" alt="Finaxa Investments Logo" style="height: 80px;">
+        </div>
+
+        <div class="menu-icon" onclick="toggleMobileMenu()" style="color: #000;">&#9776;</div>
+
+        <nav class="desktop-nav">
+            <ul class="nav-links">
+                <li><a href="#container">About</a></li>
+                <li><a href="#investment-products">Investment Products</a></li>
+            </ul>
+        </nav>
+
+        <a href="#contact-section" class="meeting-btn">Book A Meeting</a>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="close-btn" onclick="toggleMobileMenu()">×</div>
+        <ul>
+            <li><a href="#container">About</a></li>
+            <li><a href="#investment-products">Investment Products</a></li>
+        </ul>
     </div>
-    <div class="info-box">
-      <div class="icon">&#128200;</div>
-      <h3>Minimal Risk</h3>
-      <p>Investors benefit by preserving their invested capital, enabled by the 100% payback of the security.</p>
-    </div>
-    <div class="info-box">
-      <div class="icon">&#9685;</div>
-      <h3>High Fixed Returns</h3>
-      <p>Build your wealth with a personalised diversified portfolio with expert advice.</p>
-    </div>
-    <div class="info-box">
-      <div class="icon">&#128181;</div>
-      <h3>Outperforming Market</h3>
-      <p>Maximize your opportunities via diversified strategies.</p>
-    </div>
-  </div>
-</section>
-<style>/* Hide info by default */
-.info-row {
-  display: none;
-  opacity: 0;
-  transform: translateY(30px);
-  visibility: hidden;
-  transition: all 0.5s ease;
-  flex-wrap: wrap;
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Stronger Investments<br>Smarter Returns</h1>
+            <p>Finaxa Investments offers up to 32% annual returns</p>
+            <a href="#contact-section" class="contact-btn">Contact Us</a>
+        </div>
+    </section>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById("mobileMenu");
+            menu.style.display = menu.style.display === "block" ? "none" : "block";
+        }
+
+        // Fix for mobile viewport height
+        function adjustViewportHeight() {
+            const hero = document.querySelector('.hero');
+            hero.style.height = `${window.innerHeight - 110}px`;
+        }
+
+        // Initial call
+        adjustViewportHeight();
+
+        // Update on resize
+        window.addEventListener('resize', adjustViewportHeight);
+    </script>
+</body>
+</html>
+<style>
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Show info on hover */
-.trigger-hover:hover + .info-row {
+body, html {
+  font-family: 'Segoe UI', sans-serif;
+  height: 100%;
+  color: white;
+}
+
+.top-nav {
   display: flex;
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-/* Info Boxes */
-.info-box {
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
-  flex: 1 1 100%;
-  margin: 10px 0;
-  text-align: center;
-}
-
-.full-image-box img {
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  padding: 20px 40px;
+  position: absolute;
   width: 100%;
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
+  z-index: 10;
 }
 
-.icon {
-  font-size: 2rem;
-  margin-bottom: 10px;
+.logo {
+  font-weight: bold;
+  font-size: 1.1rem;
+  line-height: 1.2;
 }
 
-/* Hover effect on box */
-.info-box:hover {
-  transform: translateY(-5px);
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
 }
 
-/* Mobile Styling */
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  /* color: black; */
+  font-weight: 500;
+}
+
+.meeting-btn {
+  padding: 10px 20px;
+  border: 1px solid white;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+}
+.hero {
+  /* Use viewport units accounting for navbar */
+  height: calc(100vh - 110px);
+  min-height: 500px; /* Fallback for very small screens */
+  
+  background-image: url('https://www.super-care.ae/wp-content/uploads/2018/02/4.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-top: 110px;
+  padding: 0 60px;
+}
+
 @media (max-width: 768px) {
-  .info-row {
-    flex-direction: column;
-    display: none; /* still hidden until hover */
+  .hero {
+    /* Use svh (smallest viewport height) for mobile browsers */
+    height: calc(100svh - 110px);
+    padding: 20px;
+    background-attachment: scroll;
+    background-position: center center;
+    
+    /* Force full coverage */
+    background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
   }
 
-  .info-box {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .trigger-hover {
+  .hero-text {
     text-align: center;
-    padding: 10px;
-    font-weight: bold;
-    border-bottom: 2px solid #007bff;
-    color: #007bff;
-    cursor: pointer;
+    width: 100%;
+    padding: 20px;
+    margin: auto;
   }
 
-  /* Force show info block on mobile hover */
-  .trigger-hover:hover + .info-row {
-    display: flex !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: translateY(0) !important;
+
+  .hero h1 {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  .hero p {
+    font-size: 1rem;
   }
 }
+.hero {
+  margin-top: 110px; /* match .top-nav height if fixed */
+}
+
+.hero-text {
+  max-width: 600px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.contact-btn {
+  background-color: white;
+  color: #a85d23;
+  padding: 15px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.features {
+  background-color: white;
+  color: #333;
+  display: flex;
+  justify-content: space-around;
+  padding: 40px 20px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.top-nav {
+  height: 110px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
 </style>

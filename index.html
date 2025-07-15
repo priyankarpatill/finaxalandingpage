@@ -22,204 +22,263 @@
         <link href="lib/animate/animate.min.css" rel="stylesheet">
         <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 </head>
+ <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            font-family: 'Segoe UI', sans-serif;
+            height: 100%;
+            /* color: white; */
+            overflow-x: hidden;
+        }
+
+        /* Navigation Styles */
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: black;
+            padding: 15px 30px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            height: 110px;
+        }
+
+        .logo img {
+            height: 80px;
+        }
+
+        .desktop-nav .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .meeting-btn {
+            background-color: #c1702e;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .menu-icon {
+            font-size: 30px;
+            display: none;
+            cursor: pointer;
+            color: white;
+            margin-left: auto;
+        }
+
+        .mobile-menu {
+            display: none;
+            background-color: #fff;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 250px;
+            height: 100%;
+            padding: 20px;
+            z-index: 2000;
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .mobile-menu a {
+            display: block;
+            margin: 20px 0;
+            font-size: 18px;
+            color: #000;
+            text-decoration: none;
+        }
+
+        .close-btn {
+            font-size: 30px;
+            text-align: right;
+            margin-bottom: 20px;
+            cursor: pointer;
+            color: black;
+            display: none;
+        }
+
+        /* Hero Section Styles */
+        /* .hero {
+            height: 100vh;
+            min-height: 600px;
+            background-image: url('https://www.super-care.ae/wp-content/uploads/2018/02/4.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin-top: 110px;
+            padding: 0 20px;
+        } */
+
+        .hero-text {
+            text-align: center;
+            width: 100%;
+            max-width: 800px;
+            padding: 30px;
+            /* background-color: rgba(0, 0, 0, 0.6); */
+            border-radius: 10px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        /* .contact-btn {
+            background-color: white;
+            color: #a85d23;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: all 0.3s ease;
+        } */
+
+        .contact-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .desktop-nav,
+            .meeting-btn {
+                display: none;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            .close-btn {
+                display: block;
+            }
+
+            .hero {
+                height: calc(100vh - 110px);
+                min-height: unset;
+                padding: 20px;
+                background-attachment: scroll;
+            }
+
+            .hero-text {
+                padding: 20px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-text {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
 <body>
-  <header class="top-nav" style="background-color: black;">
-    <!-- <div class="logo">AIX INVESTMENT<br>GROUP</div> -->
-      <div class="logo">
-    <img src="img/logo.png" alt="AIX Investment Logo" style="height: 110px;" />
-  </div>
+    <header class="top-nav">
+        <div class="logo">
+            <img src="img/logo.png" alt="Finaxa Investments Logo" style="height: 80px;">
+        </div>
 
-  <!-- Hamburger Menu Icon (Mobile Only) -->
-  <div class="menu-icon" onclick="toggleMobileMenu()">&#9776;</div>
+        <div class="menu-icon" onclick="toggleMobileMenu()" >&#9776;</div>
 
-  <!-- Desktop Navigation -->
-  <nav class="desktop-nav">
-    <ul class="nav-links">
-      <li><a href="#container">About</a></li>
-      <li><a href="#container-fluid service overflow-hidden pt-5">Investment Products</a></li>
-    </ul>
-  </nav>
+        <nav class="desktop-nav">
+            <ul class="nav-links">
+                <li><a href="#container">About</a></li>
+                <li><a href="#investment-products">Investment Products</a></li>
+            </ul>
+        </nav>
 
-  <!-- Book a Meeting Button -->
-  <a href="#contact-section" class="meeting-btn">Book A Meeting</a>
-</header>
-<!-- Mobile Navigation Menu -->
-<div class="mobile-menu" id="mobileMenu">
-  <div class="close-btn" onclick="toggleMobileMenu()">×</div>
-  <ul>
-    <li><a href="#container">About</a></li>
-    <li><a href="#investment-products">Investment Products</a></li>
-    <!-- <li><a href="#contact-section">Book A Meeting</a></li> -->
-  </ul>
-</div>
-<style>
-  
-  .close-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  display: none; /* shown only on mobile via media query */
-  font-size: 30px;
-  cursor: pointer;
-  color: black;
-}
+        <a href="#contact-section" class="meeting-btn">Book A Meeting</a>
+    </header>
 
-  /* General Navbar Styles */
-/* Navbar Styles */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #000;
-  padding: 15px 30px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  color: white;
-  flex-wrap: wrap;
-}
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="close-btn" onclick="toggleMobileMenu()">×</div>
+        <ul>
+            <li><a href="#container">About</a></li>
+            <li><a href="#investment-products">Investment Products</a></li>
+        </ul>
+    </div>
 
-.logo img {
-  height: 80px;
-}
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Stronger Investments<br>Smarter Returns</h1>
+            <p>Finaxa Investments offers up to 32% annual returns</p>
+            <a href="#contact-section" class="contact-btn">Contact Us</a>
+        </div>
+    </section>
 
-/* Desktop Nav */
-.desktop-nav .nav-links {
-  display: flex;
-  list-style: none;
-  gap: 30px;
-}
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById("mobileMenu");
+            menu.style.display = menu.style.display === "block" ? "none" : "block";
+        }
 
-.nav-links li a {
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-}
+        // Fix for mobile viewport height
+        function adjustViewportHeight() {
+            const hero = document.querySelector('.hero');
+            hero.style.height = `${window.innerHeight - 110}px`;
+        }
 
-/* Button */
-.meeting-btn {
-  background-color: #c1702e;
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-}
+        // Initial call
+        adjustViewportHeight();
 
-/* Hamburger icon (hidden by default) */
-.menu-icon {
-  font-size: 30px;
-  display: none;
-  cursor: pointer;
-  color: white;
-}
-
-/* Mobile menu panel */
-.mobile-menu {
-  display: none;
-  background-color: #fff;
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 250px;
-  height: 100%;
-  padding: 20px;
-  z-index: 2000;
-  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.mobile-menu ul {
-  list-style: none;
-  padding: 0;
-}
-
-.mobile-menu a {
-  display: block;
-  margin: 20px 0;
-  font-size: 18px;
-  color: #000;
-  text-decoration: none;
-}
-
-.close-btn {
-  font-size: 30px;
-  text-align: right;
-  margin-bottom: 20px;
-  cursor: pointer;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .desktop-nav,
-  .meeting-btn {
-    display: none;
-  }
-
-  .menu-icon {
-    display: block;
-  }
-}
-/* Hide close button by default (desktop) */
-.close-btn {
-  display: none;
-}
-
-/* Show close button in mobile view */
-@media (max-width: 768px) {
-  .close-btn {
-    display: block;
-    font-size: 30px;
-    text-align: right;
-    cursor: pointer;
-    margin-bottom: 20px;
-    color: black;
-  }
-}
-.menu-icon {
-  font-size: 30px;
-  display: none;
-  cursor: pointer;
-  color: white;
-  margin-left: auto;
-}
-
-@media (max-width: 768px) {
-  .menu-icon {
-    display: block;
-  }
-
-  .desktop-nav,
-  .meeting-btn {
-    display: none;
-  }
-
-  .logo img {
-    height: 80px;
-  }
-}
+        // Update on resize
+        window.addEventListener('resize', adjustViewportHeight);
+    </script>
 
 
-
-
-
-</style>
-<script>
-  function toggleMobileMenu() {
-    const menu = document.getElementById("mobileMenu");
-    menu.style.display = menu.style.display === "block" ? "none" : "block";
-  }
-</script>
-
-
-  <section class="hero">
+  <!-- <section class="hero">
     <div class="hero-text">
-        <!-- <div class="overlay"></div> -->
+        <div class="overlay"></div>
 
       <h1>Stronger Investments<br>Smarter Returns</h1>
       <p>Finaxa Investments offers up to 32% annual returns </p>
       <a href="#contact-section" class="contact-btn">Contact Us</a>
     </div>
-  </section>
+  </section> -->
   <script>
     // Fix for mobile viewport height
 function adjustViewportHeight() {
@@ -352,7 +411,90 @@ fixViewportHeight();
         </div>
       
                    
+<style>
+@media (max-width: 768px) {
+  /* Navigation */
+  .desktop-nav,
+  .meeting-btn {
+    display: none;
+  }
 
+  .menu-icon {
+    display: block;
+  }
+
+  /* Hero Section */
+  .hero {
+    height: calc(100vh - 110px);
+    padding: 20px;
+  }
+
+  .hero-text {
+    padding: 20px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  /* Investment Products Section */
+  .container-fluid.service {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+  }
+
+  .service-item {
+    margin-bottom: 30px;
+  }
+
+  .service-inner {
+    flex-direction: column;
+  }
+
+  .service-img {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .service-title {
+    width: 100%;
+  }
+
+  .service-title-name {
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  .bg-primary.text-center {
+    margin: 0 auto 15px !important;
+    width: 100%;
+    padding: 15px !important;
+  }
+
+  .service-content {
+    padding: 15px !important;
+  }
+
+  .service-content h4 {
+    font-size: 1.2rem !important;
+    margin-bottom: 15px !important;
+  }
+
+  .service-content p {
+    font-size: 0.9rem !important;
+    margin-bottom: 15px !important;
+    line-height: 1.5;
+  }
+
+  .btn.btn-primary {
+    padding: 10px 20px !important;
+    font-size: 0.9rem;
+  }
+}</style>
 
 
     <div class="container" id="container">
