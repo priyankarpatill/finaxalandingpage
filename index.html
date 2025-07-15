@@ -344,12 +344,12 @@ fixViewportHeight();
                                         <!-- <a class="btn bg-light text-secondary rounded-pill py-3 px-5 mb-4" href="#">Explore More</a> -->
                                     </div>
                                     <div class="service-content pb-4">
-                                        <a href="#"><h4 class="text-white mb-4 py-3">Investment in Aviation</h4></a>
+                                        <!-- <a href="#"><h4 class="text-white mb-4 py-3">Investment in Aviation</h4></a> -->
                                         <div class="px-4">
                                             <p class="mb-4" style="color: white;">Investment Amount - AED 250,000<br>ROI                                                      upto 26%<br>Minimum Investment:                    AED 250,000<br>Period of Investments:                   2 years<br>Approved:                                          yes
 
   </p>
-                                            <a class="btn btn-primary border-secondary rounded-pill py-3 px-5" href="#">Explore More</a>
+                                            <!-- <a class="btn btn-primary border-secondary rounded-pill py-3 px-5" href="#">Explore More</a> -->
                                         </div>
                                     </div>
                                 </div>
@@ -370,10 +370,10 @@ fixViewportHeight();
                                         <!-- <a class="btn bg-light text-secondary rounded-pill py-3 px-5 mb-4" href="#">Explore More</a> -->
                                     </div>
                                     <div class="service-content pb-4">
-                                        <a href="#"><h4 class="text-white mb-4 py-3">Investment in Real Estate </h4></a>
+                                        <!-- <a href="#"><h4 class="text-white mb-4 py-3">Investment in Real Estate </h4></a> -->
                                         <div class="px-4">
                                             <p class="mb-4" style="color: white;">Investment Amount              -       AED 2,000,000<br>ROI                                                     upto 20%<br>Minimum Investment:                   AED 2,000,000<br>Period of Investments:                   5 years<br>Approved:                                         yes</p>
-                                            <a class="btn btn-primary border-secondary rounded-pill text-white py-3 px-5" href="#" style="color: white;">Explore More</a>
+                                            <!-- <a class="btn btn-primary border-secondary rounded-pill text-white py-3 px-5" href="#" style="color: white;">Explore More</a> -->
                                         </div>
                                     </div>
                                 </div>
@@ -395,11 +395,11 @@ fixViewportHeight();
                                         <!-- <a class="btn bg-light text-secondary rounded-pill py-3 px-5 mb-4" href="#">Explore More</a> -->
                                     </div>
                                     <div class="service-content pb-4">
-                                        <a href="#"><h4 class="text-white mb-4 py-3">Investment in Commodities
+                                        <!-- <a href="#"><h4 class="text-white mb-4 py-3">Investment in Commodities -->
 </h4></a>
                                         <div class="px-4">
                                             <p class="mb-4" style="color: white;">Investment Amount             -        AED 100,000<br>ROI                                                     upto 32%<br>Minimum Investment:                   AED 100,000<br>Period of Investments:                   1 year<br>Approved:                                         yes</p>
-                                            <a class="btn btn-primary border-secondary rounded-pill text-white py-3 px-5" href="#">Explore More</a>
+                                            <!-- <a class="btn btn-primary border-secondary rounded-pill text-white py-3 px-5" href="#">Explore More</a> -->
                                         </div>
                                     </div>
                                 </div>
@@ -411,8 +411,7 @@ fixViewportHeight();
         </div>
       
                    
-<style>
-@media (max-width: 768px) {
+<style>@media (max-width: 768px) {
   /* Navigation */
   .desktop-nav,
   .meeting-btn {
@@ -488,6 +487,7 @@ fixViewportHeight();
     font-size: 0.9rem !important;
     margin-bottom: 15px !important;
     line-height: 1.5;
+    /* z-index: 10; */
   }
 
   .btn.btn-primary {
@@ -520,7 +520,7 @@ fixViewportHeight();
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h2>Portfolio Diversification</h2>
-                    <p>Alternative investment carry low volatility as compared to equity or mutual fund and other comparable investments.</p>
+                    <p>Reduces risk and achieves more stable, long-term returns by spreading investments across different assets.</p>
                 </div>
             </div>
         </div>
@@ -875,7 +875,99 @@ fixViewportHeight();
 }
 
 </style>
- 
+ <style>
+  /* Mobile-specific styles */
+  @media (max-width: 768px) {
+    .hover-trigger-area {
+      padding: 20px;
+    }
+
+    .trigger-row {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Show all trigger items on mobile */
+    .trigger-item {
+      width: 100%;
+      text-align: center;
+      padding: 15px;
+      margin-bottom: 10px;
+      background: #f0f0f0;
+      border-radius: 8px;
+      border-bottom: none !important;
+      position: relative;
+    }
+
+    /* Add visual indicator for hoverable items */
+    .trigger-item:after {
+      content: "↓ Tap to view details";
+      display: block;
+      font-size: 0.8rem;
+      color: #666;
+      margin-top: 5px;
+      font-weight: normal;
+    }
+
+    /* Initially hide info boxes */
+    .info-row {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    /* Show corresponding info when trigger is active */
+    .trigger-item.active + .info-row,
+    .trigger-item.active ~ .info-row {
+      display: flex;
+    }
+
+    .info-box, .full-image-box {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    .full-image-box {
+      height: auto;
+      max-height: 200px;
+    }
+  }
+</style>
+
+<script>
+  // Mobile touch interaction
+  document.addEventListener('DOMContentLoaded', function() {
+    const triggerItems = document.querySelectorAll('.trigger-item');
+    
+    triggerItems.forEach(item => {
+      item.addEventListener('click', function() {
+        if (window.innerWidth <= 768) {
+          // Close all other open items first
+          document.querySelectorAll('.trigger-item.active').forEach(activeItem => {
+            if (activeItem !== this) {
+              activeItem.classList.remove('active');
+              // Hide all info rows when clicking a new item
+              document.querySelectorAll('.info-row').forEach(row => {
+                row.style.display = 'none';
+              });
+            }
+          });
+          
+          // Toggle current item
+          this.classList.toggle('active');
+          
+          // Show corresponding content
+          if (this.classList.contains('active')) {
+            const infoRow = this.nextElementSibling;
+            if (infoRow && infoRow.classList.contains('info-row')) {
+              infoRow.style.display = 'flex';
+            }
+          }
+        }
+      });
+    });
+  });
+</script>
 
 
   <section class="why-section">
