@@ -1,66 +1,107 @@
-<footer class="footer">
-  <div class="footer-container">
-    <!-- your content -->
+<section class="hover-trigger-area">
+  <!-- Trigger Row (hover here) -->
+  <div class="trigger-row">
+    <div class="trigger-item">The key features of<br>Fixed Rate Bond</div>
+    <div class="trigger-item">Regular Income<br>Stream</div>
+    <div class="trigger-item">Low Market<br>Volatility</div>
+    <div class="trigger-item">Portfolio<br>Diversification</div>
   </div>
 
-  <div class="footer-bottom">
-    <p>© 2025 Finaxa Investments, All Rights Reserved.</p>
-    <div class="social-icons">
-      <!-- Social icons here -->
+  <!-- Content shown on hover -->
+  <div class="info-row">
+    <div class="info-box">
+      <div class="icon">&#128181;</div>
+      <h3>Regular Income Stream</h3>
+      <p>Fixed-income BONDS provide investors with a steady income and streamlined cash flow.</p>
+    </div>
+    <div class="info-box">
+      <div class="icon">&#128200;</div>
+      <h3>Low Market Volatility</h3>
+      <p>Bonds bear low volatility compared to equities, mutual funds, and other equivalent investments.</p>
+    </div>
+    <div class="info-box">
+      <div class="icon">&#9685;</div>
+      <h3>Portfolio Diversification</h3>
+      <p>BONDS enable efficient diversification and help reduce overall risk.</p>
+    </div>
+    <div class="info-box">
+      <div class="icon">&#128202;</div>
+      <h3>Fixed Returns</h3>
+      <p>Earn fixed quarterly returns with predictable income from stable investments.</p>
     </div>
   </div>
-</footer>
-
-<style>
-    .footer {
-  background-color: #0e0f16;
-  color: white;
-  padding: 60px 0 20px; /* removed side padding */
-  width: 100%;
-  margin: 0;
+</section>
+<style>.hover-trigger-area {
+  padding: 50px;
+  background: #f8f9fa;
+  text-align: center;
 }
 
-.footer-container {
-  width: 100%;
-  margin: 0;
-  padding: 0 60px; /* optional padding inside */
+/* Top Row – Hover Trigger */
+.trigger-row {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 40px;
+  justify-content: space-around;
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 30px;
 }
 
-.footer-bottom {
-  width: 100%;
-  text-align: center;
-  font-size: 12px;
-  color: #888;
-  margin-top: 20px;
-  padding: 0 20px; /* optional, for inner spacing */
+.trigger-item {
+  padding: 10px 20px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s ease, border-color 0.3s ease;
 }
 
-.footer-disclaimer {
-  width: 100%;
-  padding: 0 60px;
-  color: #ccc;
-  font-size: 12px;
-  line-height: 1.5;
+.hover-trigger-area:hover .trigger-item {
+  color: #007bff;
+  border-color: #007bff;
 }
 
-.social-icons {
-  margin: 20px 0;
-  text-align: center;
+/* Hidden Info Row */
+.info-row {
+  display: flex;
+  justify-content: space-around;
+  opacity: 0;
+  transform: translateY(30px);
+  visibility: hidden;
+  transition: all 0.5s ease;
 }
 
-.social-icons a {
-  color: #fff;
-  margin: 0 10px;
-  font-size: 1.4rem;
-  transition: color 0.3s ease;
+/* Show info row on hover */
+.hover-trigger-area:hover .info-row {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
-.social-icons a:hover {
-  color: #f39c12;
+.info-box {
+  background: #fff;
+  padding: 20px;
+  width: 22%;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
 }
 
+.info-box .icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.info-box:hover {
+  transform: translateY(-5px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .info-row, .trigger-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info-box, .trigger-item {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+}
 </style>
