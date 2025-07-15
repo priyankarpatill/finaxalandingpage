@@ -247,7 +247,7 @@
     <section class="hero">
         <div class="hero-text">
             <h1>Stronger Investments<br>Smarter Returns</h1>
-            <p>Finaxa Investments offers up to 32% annual returns</p>
+            <p style="color: #000; font-weight: bold;">Finaxa Investments offers up to 32% annual returns</p>
             <a href="#contact-section" class="contact-btn">Contact Us</a>
         </div>
     </section>
@@ -412,7 +412,26 @@ fixViewportHeight();
             </div>
         </div>
       
-                   
+          <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const serviceItems = document.querySelectorAll(".service-item");
+
+    serviceItems.forEach(item => {
+      item.addEventListener("click", function () {
+        // Close all other open items
+        serviceItems.forEach(i => {
+          if (i !== item) {
+            i.classList.remove("show-on-tap");
+          }
+        });
+
+        // Toggle the clicked item
+        item.classList.toggle("show-on-tap");
+      });
+    });
+  });
+</script>
+         
 <style>@media (max-width: 768px) {
   /* Navigation */
   .desktop-nav,

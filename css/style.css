@@ -459,6 +459,18 @@ html {
 .service .service-item:hover .service-inner .service-img img {
     transform: scale(1.3);
 }
+/* Show content if hovered OR has class show-on-tap */
+.service .service-item:hover .service-content,
+.service .service-item.show-on-tap .service-content {
+    bottom: 0;
+    opacity: 1;
+}
+
+.service .service-item:hover .service-title-name,
+.service .service-item.show-on-tap .service-title-name {
+    opacity: 0;
+}
+
 /*** Service End ***/
 
 
