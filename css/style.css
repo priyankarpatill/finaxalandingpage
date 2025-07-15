@@ -49,28 +49,14 @@ body, html {
 }
 
 .hero {
-  min-height: 100vh;
-  background-image: url('https://www.super-care.ae/wp-content/uploads/2018/02/4.jpg');
+  height: 100vh;
+  background-image: url('https://www.super-care.ae/wp-content/uploads/2018/02/4.jpg'); /* Replace with your image URL */
   background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 130px 20px 20px 20px; /* Top padding allows room for fixed nav */
-  text-align: center;
-  flex-direction: column;
+  padding-left: 60px;
   position: relative;
-}
-/* Mobile fix: Use contain and adjust layout */
-@media (max-width: 768px) {
-  .hero {
-    background-size: contain;
-    background-position: top center;
-    background-repeat: no-repeat;
-    min-height: auto;
-    padding-top: 150px;
-  }
 }
 
 .hero-text {
@@ -126,53 +112,6 @@ html {
   scroll-behavior: smooth;
 }
 
-@media (max-width: 768px) {
-  /* .top-nav {
-    flex-direction: column;
-    padding: 10px 20px;
-    height: auto;
-  } */
-
-  /* .nav-links {
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-    padding: 10px 0;
-  } */
-
-  .hero {
-    padding: 20px;
-    text-align: center;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .hero-text {
-    max-width: 100%;
-    padding: 0 10px;
-  }
-
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  .contact-btn {
-    padding: 12px 20px;
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero {
-    height: auto;
-    min-height: 100vh;
-    background-position: top center; /* optional */
-  }
-}
 
 
 /* top section */

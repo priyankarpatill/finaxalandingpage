@@ -208,12 +208,25 @@
 
   <section class="hero">
     <div class="hero-text">
+        <!-- <div class="overlay"></div> -->
+
       <h1>Storger investment<br>Smarter return</h1>
       <p>Finaxa Investments offers 32% annual returns </p>
       <a href="#contact-section" class="contact-btn">Contact Us</a>
     </div>
   </section>
+<style>
+  .hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3); /* optional */
+  z-index: 1;
+}
 
+</style>
   <section class="features">
     <div class="feature-item">
       <p>The key features of<br>fixed rate bond</p>
@@ -251,74 +264,7 @@
       </div>
     </div>
   </section>
-  <style>.top-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  padding: 40px 20px;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.left-image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-.left-image,
-.right-content {
-  flex: 1 1 48%;
-}
-
-.right-content {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.cards {
-  background-color: #f4f4f4;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
-
-.cards .icon {
-  font-size: 30px;
-  margin-bottom: 10px;
-  color: #c1702e;
-}
-
-.cards h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.cards p {
-  font-size: 14px;
-  color: #555;
-}
-
-/* 🔽 Mobile view */
-@media (max-width: 768px) {
-  .top-section {
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
-
-  .left-image,
-  .right-content {
-    flex: 1 1 100%;
-  }
-
-  .cards {
-    width: 100%;
-  }
-}
-</style>
-
+  
  
 
     <div class="container" id="container">
