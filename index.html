@@ -53,6 +53,36 @@
   </ul>
 </div>
 <style>
+  @media (max-width: 768px) {
+  .hero {
+    padding-top: 150px; /* Increased from 130px */
+    height: auto; /* allow hero to grow */
+  }
+}
+
+  .top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: black;
+  padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  height: auto;
+  flex-wrap: wrap; /* allow items to stack */
+}
+
+.menu-icon {
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  margin-left: auto;
+  display: block; /* always show on mobile */
+}
+
+
+
   .close-btn {
   position: absolute;
   top: 20px;
