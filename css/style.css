@@ -112,6 +112,53 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (max-width: 768px) {
+  /* .top-nav {
+    flex-direction: column;
+    padding: 10px 20px;
+    height: auto;
+  } */
+
+  /* .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    padding: 10px 0;
+  } */
+
+  .hero {
+    padding: 20px;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero-text {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .contact-btn {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    min-height: 100vh;
+    background-position: top center; /* optional */
+  }
+}
 
 
 /* top section */
