@@ -53,6 +53,16 @@
   </ul>
 </div>
 <style>
+  .close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: none; /* shown only on mobile via media query */
+  font-size: 30px;
+  cursor: pointer;
+  color: black;
+}
+
   /* General Navbar Styles */
 /* Navbar Styles */
 .navbar {
@@ -148,6 +158,22 @@
     display: block;
   }
 }
+/* Hide close button by default (desktop) */
+.close-btn {
+  display: none;
+}
+
+/* Show close button in mobile view */
+@media (max-width: 768px) {
+  .close-btn {
+    display: block;
+    font-size: 30px;
+    text-align: right;
+    cursor: pointer;
+    margin-bottom: 20px;
+    color: black;
+  }
+}
 
 </style>
 <script>
@@ -203,6 +229,73 @@
       </div>
     </div>
   </section>
+  <style>.top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 40px 20px;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.left-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.left-image,
+.right-content {
+  flex: 1 1 48%;
+}
+
+.right-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cards {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.cards .icon {
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: #c1702e;
+}
+
+.cards h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.cards p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* 🔽 Mobile view */
+@media (max-width: 768px) {
+  .top-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .left-image,
+  .right-content {
+    flex: 1 1 100%;
+  }
+
+  .cards {
+    width: 100%;
+  }
+}
+</style>
 
  
 
@@ -617,12 +710,12 @@ faqItems.forEach(item => {
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="footer-item d-flex flex-column">
                             <h4 class="text-secondary mb-4">Our Services</h4>
-                            <a href="#" class=""><i class="fas fa-angle-right me-2"></i> Business</a>
-                            <a href="#" class=""><i class="fas fa-angle-right me-2"></i> Evaluation</a>
-                            <a href="#" class=""><i class="fas fa-angle-right me-2"></i> Migrate</a>
+                            <a href="#" class=""><i class="fas fa-angle-right me-2"></i> About</a>
+                            <a href="#" class=""><i class="fas fa-angle-right me-2"></i> Investment Models</a>
+                            <!-- <a href="#" class=""><i class="fas fa-angle-right me-2"></i> Migrate</a>
                             <a href="#" class=""><i class="fas fa-angle-right me-2"></i> Study</a>
                             <a href="#" class=""><i class="fas fa-angle-right me-2"></i> Counselling</a>
-                            <a href="#" class=""><i class="fas fa-angle-right me-2"></i> Work / Career</a>
+                            <a href="#" class=""><i class="fas fa-angle-right me-2"></i> Work / Career</a> -->
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-xl-3">
