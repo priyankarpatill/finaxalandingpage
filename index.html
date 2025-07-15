@@ -229,7 +229,7 @@
         <nav class="desktop-nav">
             <ul class="nav-links">
                 <li><a href="#container">About</a></li>
-                <li><a href="#investment-products">Investment Products</a></li>
+                <li><a href="#container-fluid service overflow-hidden pt-5">Investment Products</a></li>
             </ul>
         </nav>
 
@@ -1208,75 +1208,132 @@ faqItems.forEach(item => {
   });
 });
 </script>
-
- 
-
-
-   <!-- Footer Start -->
-        <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
-            <div class="container py-5">
-                <div class="row g-5">
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="text-secondary mb-4"  style="color: white;">Contact Info</h4>
-                            <!-- <a href=""><i class="fa fa-map-marker-alt me-2"></i> 123 Street, New York, USA</a> -->
-                            <a href=""><i class="fas fa-envelope me-2"></i> info@finaxainvestments.com</a>
-                            <a href=""><i class="fas fa-phone me-2"></i> +971 52 115 4446</a>
-                            <!-- <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +012 345 67890</a> -->
-                            <div class="d-flex align-items-center">
-                                <i class="fas fa-share fa-2x text-secondary me-2"></i>
-                                <a class="btn mx-1" href="https://www.facebook.com/profile.php?id=61577201976549"><i class="fab fa-facebook-f"></i></a>
-                                <!-- <a class="btn mx-1" href=""><i class="fab fa-twitter"></i></a> -->
-                                <a class="btn mx-1" href="https://www.instagram.com/finaxainvestments/"><i class="fab fa-instagram"></i></a>
-                                <a class="btn mx-1" href="https://www.linkedin.com/company/finaxa-investments/about/?viewAsMember=true"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
+<!-- Footer Start -->
+<div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <!-- Column 1: Logo -->
+            <div class="col-md-6 col-lg-3">
+                <div class="footer-item">
+                    <div class="footer-logo mb-4">
+                        <img src="img/logo.png" alt="Finaxa Investments Logo" style="height: 100px;">
                     </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="text-secondary mb-4">Opening Time</h4>
-                            <div class="mb-3">
-                                <h6 class="text-muted mb-0">Mon - Friday:</h6>
-                                <p class="text-white mb-0">09.00 am to 07.00 pm</p>
-                            </div>
-                            <div class="mb-3">
-                                <h6 class="text-muted mb-0">Satday:</h6>
-                                <p class="text-white mb-0">10.00 am to 05.00 pm</p>
-                            </div>
-                            <div class="mb-3">
-                                <h6 class="text-muted mb-0">Vacation:</h6>
-                                <p class="text-white mb-0">All Sunday is our vacation</p>
-                            </div>
-                        </div>
+                   
+                </div>
+            </div>
+
+            <!-- Column 2: Contact Info -->
+            <div class="col-md-6 col-lg-3">
+                <div class="footer-item">
+                    <h4 class="text-white mb-4">Contact Info</h4>
+                    <div class="d-flex flex-column">
+                        <a href="mailto:info@finaxainvestments.com" class="text-white mb-2"><i class="fas fa-envelope me-2"></i> info@finaxainvestments.com</a>
+                        <a href="tel:+971521154446" class="text-white"><i class="fas fa-phone me-2"></i> +971 52 115 4446</a>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="text-secondary mb-4">Our Services</h4>
-                            <a href="#" class="#container"><i class="fas fa-angle-right me-2"></i> About</a>
-                            <a href="#" class="#container-fluid service overflow-hidden pt-5"><i class="fas fa-angle-right me-2"></i> Investment Models</a>
-                            <!-- <a href="#" class=""><i class="fas fa-angle-right me-2"></i> Migrate</a>
-                            <a href="#" class=""><i class="fas fa-angle-right me-2"></i> Study</a>
-                            <a href="#" class=""><i class="fas fa-angle-right me-2"></i> Counselling</a>
-                            <a href="#" class=""><i class="fas fa-angle-right me-2"></i> Work / Career</a> -->
-                        </div>
+                     <div class="d-flex align-items-center">
+                        <i class="fas fa-share fa-2x text-secondary me-2"></i>
+                        <a class="btn mx-1" href="https://www.facebook.com/profile.php?id=61577201976549"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn mx-1" href="https://www.instagram.com/finaxainvestments/"><i class="fab fa-instagram"></i></a>
+                        <a class="btn mx-1" href="https://www.linkedin.com/company/finaxa-investments/about/?viewAsMember=true"><i class="fab fa-linkedin-in"></i></a>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item">
-                            <h4 class="text-secondary mb-4">Newsletter</h4>
-                            <p class="text-white mb-3">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            <div class="position-relative mx-auto rounded-pill">
-                                <input class="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Enter your email">
-                                <button type="button" class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 mt-2 me-2">SignUp</button>
-                            </div>
+                </div>
+            </div>
+
+            <!-- Column 3: Opening Time -->
+            <div class="col-md-6 col-lg-3">
+                <div class="footer-item">
+                    <h4 class="text-white mb-4">Opening Time</h4>
+                    <div class="d-flex flex-column">
+                        <div class="mb-2">
+                            <h6 class="text-muted mb-0">Mon - Friday:</h6>
+                            <p class="text-white mb-2">09.00 am to 07.00 pm</p>
+                        </div>
+                        <div class="mb-2">
+                            <h6 class="text-muted mb-0">Saturday:</h6>
+                            <p class="text-white mb-2">10.00 am to 05.00 pm</p>
+                        </div>
+                        <div class="mb-2">
+                            <h6 class="text-muted mb-0">Vacation:</h6>
+                            <p class="text-white">All Sunday is our vacation</p>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Column 4: Our Services -->
+            <div class="col-md-6 col-lg-3">
+                <div class="footer-item">
+                    <h4 class="text-white mb-4">Our Services</h4>
+                    <div class="d-flex flex-column">
+                        <a href="#container" class="text-white mb-2"><i class="fas fa-angle-right me-2"></i> About</a>
+                        <a href="#container-fluid service overflow-hidden pt-5" class="text-white"><i class="fas fa-angle-right me-2"></i> Investment Models</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- Footer End -->
+        
+        <!-- Copyright Text -->
+        <div class="row mt-5">
+            <div class="col-12 text-center">
+                <p class="text-white mb-0">© <script>document.write(new Date().getFullYear())</script> Finaxa Investments. All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
 
+<style>
+/* Footer Styles */
+.footer {
+    background-color: #000;
+    color: white;
+    padding: 60px 0 20px;
+    width: 100%;
+}
 
-</body>
-</html>
+.footer-item {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
 
- 
+.footer-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.footer-item a {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.footer-item a:hover {
+    color: #f39c12;
+}
+
+.footer-logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+.social-icons .btn {
+    color: white;
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons .btn:hover {
+    color: #f39c12;
+}
+
+@media (max-width: 768px) {
+    .footer-item {
+        margin-bottom: 2rem;
+    }
+}
+</style>
