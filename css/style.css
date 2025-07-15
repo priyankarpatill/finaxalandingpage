@@ -57,6 +57,9 @@ body, html {
   align-items: center;
   padding-left: 60px;
   position: relative;
+ 
+ 
+
 }
 
 .hero-text {
@@ -127,14 +130,32 @@ body, html {
   z-index: 1000;
 }
 
-.hero {
-  padding-top: 130px; /* header height + some space */
-}
+
 
 html {
   scroll-behavior: smooth;
 }
 
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100vh;
+    background-image: url('https://www.super-care.ae/wp-content/uploads/2018/02/4.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-text {
+    padding: 0;
+    width: 100%;
+  }
+}
 
 
 /* top section */
