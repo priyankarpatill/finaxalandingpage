@@ -25,19 +25,138 @@
 <body>
   <header class="top-nav" style="background-color: black;">
     <!-- <div class="logo">AIX INVESTMENT<br>GROUP</div> -->
-     <div class="logo">
-  <img src="img/logo.png" alt="AIX Investment Logo" style="height: 110px;" />
-</div>
+      <div class="logo">
+    <img src="img/logo.png" alt="AIX Investment Logo" style="height: 110px;" />
+  </div>
 
-    <nav>
-      <ul class="nav-links" >
-        <li style="color: white;"><a href="#container">About</a></li>
-        <li style="color: white;"><a href="#container-fluid service overflow-hidden pt-5">Investment Products</a></li>
-        <!-- <li style="color: white;"><a href="#">About Fixed Rate investment</a></li> -->
-      </ul>
-    </nav>
-    <a href="#contact-section" class="meeting-btn">Book A Meeting</a>
-  </header>
+  <!-- Hamburger Menu Icon (Mobile Only) -->
+  <div class="menu-icon" onclick="toggleMobileMenu()">&#9776;</div>
+
+  <!-- Desktop Navigation -->
+  <nav class="desktop-nav">
+    <ul class="nav-links">
+      <li><a href="#container">About</a></li>
+      <li><a href="#investment-products">Investment Products</a></li>
+    </ul>
+  </nav>
+
+  <!-- Book a Meeting Button -->
+  <a href="#contact-section" class="meeting-btn">Book A Meeting</a>
+</header>
+<!-- Mobile Navigation Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="close-btn" onclick="toggleMobileMenu()">×</div>
+  <ul>
+    <li><a href="#container">About</a></li>
+    <li><a href="#investment-products">Investment Products</a></li>
+    <!-- <li><a href="#contact-section">Book A Meeting</a></li> -->
+  </ul>
+</div>
+<style>
+  /* General Navbar Styles */
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  color: white;
+  flex-wrap: wrap;
+}
+
+.logo img {
+  height: 80px;
+}
+
+/* Desktop Nav */
+.desktop-nav .nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* Button */
+.meeting-btn {
+  background-color: #c1702e;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+/* Hamburger icon (hidden by default) */
+.menu-icon {
+  font-size: 30px;
+  display: none;
+  cursor: pointer;
+  color: white;
+}
+
+/* Mobile menu panel */
+.mobile-menu {
+  display: none;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 100%;
+  padding: 20px;
+  z-index: 2000;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.mobile-menu a {
+  display: block;
+  margin: 20px 0;
+  font-size: 18px;
+  color: #000;
+  text-decoration: none;
+}
+
+.close-btn {
+  font-size: 30px;
+  text-align: right;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .desktop-nav,
+  .meeting-btn {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
+
+</style>
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById("mobileMenu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+  }
+</script>
+
 
   <section class="hero">
     <div class="hero-text">
