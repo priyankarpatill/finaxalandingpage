@@ -1,107 +1,103 @@
 <section class="hover-trigger-area">
-  <!-- Trigger Row (hover here) -->
-  <div class="trigger-row">
-    <div class="trigger-item">The key features of<br>Fixed Rate investment</div>
-    <div class="trigger-item">Regular Income<br>Stream</div>
-    <div class="trigger-item">Low Market<br>Volatility</div>
-    <div class="trigger-item">Portfolio<br>Diversification</div>
-  </div>
+  <!-- Trigger Label -->
+  <div class="trigger-hover">Fixed Income Security Features</div>
 
-  <!-- Content shown on hover -->
+  <!-- Revealed Content on Hover -->
   <div class="info-row">
-    <div class="info-box">
-      <div class="icon">&#128181;</div>
-      <h3>Regular Income Stream</h3>
-      <p>Fixed-income investmentS provide investors with a steady income and streamlined cash flow.</p>
+    <div class="info-box full-image-box">
+      <img src="./img/finaxagroup.jpg" alt="Regular Income Stream" class="feature-image" />
     </div>
     <div class="info-box">
       <div class="icon">&#128200;</div>
-      <h3>Low Market Volatility</h3>
-      <p>investments bear low volatility compared to equities, mutual funds, and other equivalent investments.</p>
+      <h3>Minimal Risk</h3>
+      <p>Investors benefit by preserving their invested capital, enabled by the 100% payback of the security.</p>
     </div>
     <div class="info-box">
       <div class="icon">&#9685;</div>
-      <h3>Portfolio Diversification</h3>
-      <p>investmentS enable efficient diversification and help reduce overall risk.</p>
+      <h3>High Fixed Returns</h3>
+      <p>Build your wealth with a personalised diversified portfolio with expert advice.</p>
     </div>
     <div class="info-box">
-      <div class="icon">&#128202;</div>
-      <h3>Fixed Returns</h3>
-      <p>Earn fixed quarterly returns with predictable income from stable investments.</p>
+      <div class="icon">&#128181;</div>
+      <h3>Outperforming Market</h3>
+      <p>Maximize your opportunities via diversified strategies.</p>
     </div>
   </div>
 </section>
-<style>.hover-trigger-area {
-  padding: 50px;
-  background: #f8f9fa;
-  text-align: center;
-}
-
-/* Top Row – Hover Trigger */
-.trigger-row {
-  display: flex;
-  justify-content: space-around;
-  cursor: pointer;
-  font-weight: bold;
-  margin-bottom: 30px;
-}
-
-.trigger-item {
-  padding: 10px 20px;
-  border-bottom: 2px solid transparent;
-  transition: color 0.3s ease, border-color 0.3s ease;
-}
-
-.hover-trigger-area:hover .trigger-item {
-  color: #007bff;
-  border-color: #007bff;
-}
-
-/* Hidden Info Row */
+<style>/* Hide info by default */
 .info-row {
-  display: flex;
-  justify-content: space-around;
+  display: none;
   opacity: 0;
   transform: translateY(30px);
   visibility: hidden;
   transition: all 0.5s ease;
+  flex-wrap: wrap;
 }
 
-/* Show info row on hover */
-.hover-trigger-area:hover .info-row {
+/* Show info on hover */
+.trigger-hover:hover + .info-row {
+  display: flex;
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
 
+/* Info Boxes */
 .info-box {
   background: #fff;
   padding: 20px;
-  width: 22%;
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   transition: transform 0.3s;
+  flex: 1 1 100%;
+  margin: 10px 0;
+  text-align: center;
 }
 
-.info-box .icon {
+.full-image-box img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.icon {
   font-size: 2rem;
   margin-bottom: 10px;
 }
 
+/* Hover effect on box */
 .info-box:hover {
   transform: translateY(-5px);
 }
 
-/* Responsive */
+/* Mobile Styling */
 @media (max-width: 768px) {
-  .info-row, .trigger-row {
+  .info-row {
     flex-direction: column;
-    align-items: center;
+    display: none; /* still hidden until hover */
   }
 
-  .info-box, .trigger-item {
-    width: 90%;
+  .info-box {
+    width: 100%;
     margin-bottom: 20px;
+  }
+
+  .trigger-hover {
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    border-bottom: 2px solid #007bff;
+    color: #007bff;
+    cursor: pointer;
+  }
+
+  /* Force show info block on mobile hover */
+  .trigger-hover:hover + .info-row {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
   }
 }
 </style>
