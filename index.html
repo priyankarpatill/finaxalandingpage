@@ -221,7 +221,7 @@
 <body>
     <header class="top-nav" style="border: #000;">
         <div class="logo">
-            <img src="img/logo.png" alt="Finaxa Investments Logo" style="height: 80px;">
+            <img src="img/logo.png" alt="Finaxa Investments Logo" style="height: 120px;">
         </div>
 
         <div class="menu-icon" onclick="toggleMobileMenu()" >&#9776;</div>
@@ -243,14 +243,103 @@
             <li><a href="#investment-products">Investment Products</a></li>
         </ul>
     </div>
+<section class="hero">
+  <div class="hero-text">
+    <!-- Desktop version (hidden on mobile) -->
+    <h1>Stronger Investments<br>Smarter Returns</h1>
+    
+    <!-- Mobile version (shown only on mobile) -->
+    <div class="mobile-heading">
+      <span class="line">Stronger</span>
+      <span class="line">Investments</span>
+      <span class="line">Smarter Returns</span>
+    </div>
+    
+    <p style="color: #000; font-weight: bold;">Finaxa Investments offers up to 32% annual returns</p>
+    <a href="#contact-section" class="contact-btn">Contact Us</a>
+  </div>
+</section>
+<style>
+  /* Add this to your existing styles */
+  .hero-text .mobile-heading {
+    display: none;
+  }
+  
+  @media (max-width: 768px) {
+    .hero-text h1 {
+      display: none;
+    }
+    
+    .hero-text .mobile-heading {
+      display: block;
+      text-align: left;
+      margin-bottom: 20px;
+    }
+    
+    .hero-text .mobile-heading .line {
+      display: block;
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    
+    .hero-text p {
+      text-align: left;
+      margin-bottom: 30px;
+    }
+    
+    .hero-text {
+      padding: 20px;
+      text-align: left;
+    }
+  }
+  @media (max-width: 768px) {
+  .hero-text {
+    padding: 20px;
+    text-align: left;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    right: 5%;
+    z-index: 2;
+  }
 
-    <section class="hero">
-        <div class="hero-text">
-            <h1>Stronger Investments<br>Smarter Returns</h1>
-            <p style="color: #000; font-weight: bold;">Finaxa Investments offers up to 32% annual returns</p>
-            <a href="#contact-section" class="contact-btn">Contact Us</a>
-        </div>
-    </section>
+  .hero-text h1 {
+    display: none;
+  }
+
+  .hero-text .mobile-heading {
+    display: block;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+
+  .hero-text .mobile-heading .line {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .hero-text p {
+    text-align: left;
+    margin-bottom: 20px;
+    color: #000;
+    font-weight: bold;
+  }
+
+  .contact-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-radius: 30px;
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+  }
+}
+
+</style>
 
     <script>
         function toggleMobileMenu() {
