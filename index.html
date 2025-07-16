@@ -432,8 +432,8 @@ fixViewportHeight();
                                             <a href="#" class="h4 text-white mb-0">Investment in <br>
                                                 Aviation</a>
                                         </div>
-                                        <div class="tap-hint text-center text-secondary">↓ Tap to view details</div>
-                                        
+                                        <div class="tap-hint text-center text-secondary" style="display:block;">↓ Tap to view details</div>
+                                         <div class="mobile-tap-hint text-center text-muted mb-3">↓ Tap to view details</div>
                                         <!-- <a class="btn bg-light text-secondary rounded-pill py-3 px-5 mb-4" href="#">Explore More</a> -->
                                     </div>
                                     <div class="service-content pb-4">
@@ -460,6 +460,7 @@ fixViewportHeight();
                                         <div class="bg-primary text-center rounded p-3 mx-5 mb-4">
                                             <a href="#" class="h4 text-white mb-0">Investment in Real Estate </a>
                                         </div>
+                                         <div class="mobile-tap-hint text-center text-muted mb-3">↓ Tap to view details</div>
                                         <!-- <a class="btn bg-light text-secondary rounded-pill py-3 px-5 mb-4" href="#">Explore More</a> -->
                                     </div>
                                     <div class="service-content pb-4">
@@ -485,6 +486,7 @@ fixViewportHeight();
                                             <a href="#" class="h4 text-white mb-0">Investment in Commodities
 </a>
                                         </div>
+                                         <div class="mobile-tap-hint text-center text-muted mb-3">↓ Tap to view details</div>
                                         <!-- <a class="btn bg-light text-secondary rounded-pill py-3 px-5 mb-4" href="#">Explore More</a> -->
                                     </div>
                                     <div class="service-content pb-4">
@@ -522,7 +524,43 @@ fixViewportHeight();
     });
   });
 </script>
-         
+         <style>
+/* Mobile Tap Hint Styling */
+.mobile-tap-hint {
+    display: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: #6c757d !important;
+    margin-top: -5px;
+    margin-bottom: 15px !important;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+/* Show only on mobile */
+@media (max-width: 768px) {
+    .mobile-tap-hint {
+        display: block !important;
+    }
+    
+    /* Make cards look tappable */
+    .service-item {
+        cursor: pointer;
+        transition: transform 0.2s;
+    }
+    
+    .service-item:active {
+        transform: scale(0.98);
+    }
+}
+
+
+</style>
 <style>.tap-hint {
   display: none;
   font-size: 0.9rem;
@@ -534,7 +572,7 @@ fixViewportHeight();
 
 @media (max-width: 768px) {
   .tap-hint {
-    display: block;
+    display: block !important;
   }
 }
 
